@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Neumorphism | HTML & CSS Light and Dark mode</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme">
+  <div class="wrapper">
+    <div class="toggle"></div>
+    <div class="img-area">
+      <div class="inner-area">
+        <img src="https://avatars.githubusercontent.com/u/64282146?v=4" alt="Imagem Diego Henrique">
+      </div>
+    </div>
+    <div class="name">Diego Henrique</div>
+    <div class="about">Front-end Developer</div>
+    <div class="social-icons">
+      <a href="https://github.com/DiegoReports" target="_blank" class="fb"><i class="fa fa-github"></i></a>
+      <a href="https://www.instagram.com/guinho_dihenrique/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/diego-henrique-sg/" target="_blank" class="linkedin"><i class="fa fa-linkedin-square"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=+5515991295814" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+    </div>
+    <div class="buttons">
+      <button>Message</button>
+      <button>Following</button>
+    </div>
+    <div class="social-share">
+      <div class="row">
+        <i class="fa fa-heart"></i>
+        <span>20.4k</span>
+      </div>
+
+      <div class="row">
+        <i class="fa fa-comment"></i>
+        <span>14.1k</span>
+      </div>
+
+      <div class="row">
+        <i class="fa fa-share"></i>
+        <span>11.2k</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const theme = document.querySelector('.theme');
+    const toggle = document.querySelector('.toggle');
+    toggle.onclick = function(){
+      theme.classList.toggle('dark')
+    }
+  </script>
+</body>
+</html>

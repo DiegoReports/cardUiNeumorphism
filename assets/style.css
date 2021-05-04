@@ -1,0 +1,268 @@
+:root {
+  --bg-light: #ecf0f3;
+  --bg-dark: linear-gradient(120deg, #131419, #17171b);
+  --dark-font: #31344b;
+  --dark-font-about: #44476a;
+  --light-font: #caced1;
+
+  --github: #5d636d;
+  --instagram: #e1306c;
+  --linkedin: #2d54d6;
+  --whatsapp: #34d141;
+
+  --bx-shadow-light: -3px -3px 7px #ffffffff,
+                      3px 3px 5px #ceced1;
+  --bx-shadow-dark: -5px -5px 10px rgba(255,255,255,0.05),
+                      5px 5px 15px rgba(0,0,0,0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-light);
+  transition: background 0.5s;
+}
+
+.theme.dark {
+  background: var(--bg-dark);
+}
+
+.wrapper, 
+.wrapper .img-area,
+.social-icons a,
+.buttons button,
+.toggle {
+  background: var(--bg-light);
+  border-radius: 10px;
+  box-shadow: var(--bx-shadow-light);
+  transition: background 0.5s, box-shadow 0.5s;
+}
+
+.wrapper {
+  padding: 30px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  transition: background 0.5s;
+}
+
+/* .theme.dark .wrapper {
+  background: var(--bg-dark);
+} */
+
+.theme.dark .wrapper, 
+.theme.dark .wrapper .img-area,
+.theme.dark .social-icons a,
+.theme.dark .buttons button,
+.theme.dark .toggle {
+  background: var(--bg-dark);
+  /* border-radius: 10px; */
+  box-shadow: var(--bx-shadow-dark);
+
+}
+
+.wrapper .img-area {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-area .inner-area {
+  height: calc(100% - 25px);
+  width: calc(100% - 25px);
+  border-radius: 50%;
+}
+
+.inner-area img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.wrapper .name {
+  font-size: 28px;
+  color: var(--dark-font);
+  font-weight: 600;
+  margin: 10px 0 5px 0;
+}
+
+.theme.dark .name,
+.theme.dark .about,
+.theme.dark .buttons button {
+  color: var(--light-font);
+}
+
+.wrapper .about {
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--dark-font-about);
+}
+
+.wrapper .social-icons {
+  margin: 15px 0 25px 0;
+}
+
+.social-icons a {
+  height: 40px;
+  width: 40px;
+  display: inline-flex;
+  text-decoration: none;
+  margin: 0 5px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.social-icons a:hover::before,
+.buttons button:hover::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--bg-light);
+  border-radius: 50%;
+  box-shadow: inset -3px -3px 7px #ffffffff,
+              inset 3px 3px 5px #ceced1;
+
+  transition: background 0.5s;
+}
+
+.theme.dark .social-icons a:hover::before,
+.theme.dark .buttons button:hover::before {
+  background: var(--bg-dark);
+  box-shadow: var(--bx-shadow-dark);
+}
+
+.buttons button:hover::before {
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.social-icons a i {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+.social-icons a.fb i {
+  color: var(--github);
+}
+
+.social-icons a.instagram i {
+  color: var(--instagram);
+}
+
+.social-icons a.linkedin i {
+  color: var(--linkedin);
+}
+
+.social-icons a.whatsapp i {
+  color: var(--whatsapp);
+}
+
+.wrapper .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttons button {
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--dark-font);
+  z-index: 4;
+}
+
+.buttons button:first-child {
+  margin-right: 10px;
+}
+
+.buttons button:last-child {
+  margin-left: 10px;
+}
+
+.row:first-child::before {
+  background: none;
+}
+
+.wrapper .social-share {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+
+.social-share .row {
+  color: var(--dark-font);
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme.dark .social-share .row {
+  color: var(--light-font);
+}
+
+.social-share .row::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 100%;
+  background: #e0e6eb;
+  margin-left: -25px;
+}
+
+.theme.dark .social-share .row::before {
+  background: var(--dark-font);
+}
+
+.toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: '\f186';
+  font-family: fontAwesome;
+  color: rgb(248, 122, 19);
+}
+
+.theme.dark .toggle::before{
+  content: '\f185';
+}
